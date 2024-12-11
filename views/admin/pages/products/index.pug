@@ -4,6 +4,7 @@ include ../../mixins/search.pug
 include ../../mixins/pagination.pug
 include ../../mixins/form-change-multi.pug
 include ../../mixins/alert.pug
+include ../../mixins/sort.pug
 block main
     +alert-success(5000)
     +alert-error(5000)
@@ -18,6 +19,9 @@ block main
                     +filter-status(filterStatus)
                 .col-6
                     +search(keyword)
+
+    +sort()
+    
     .card.mb-3 
         .card-header Danh sách sản phẩm
         .card-body 
@@ -29,6 +33,7 @@ block main
                         href= `${prefixAdmin}/products/create`
                         class= "btn btn-outline-success"
                     ) + Thêm mới
+    
             
             
             
